@@ -114,6 +114,25 @@ void loop() {
 menu.handleInput(); // Handle button presses or rotary encoder input
 }
 
+## **Adding and Linking Pages**
+
+Basic Concept
+You create a new GEMPage, then add it as a child to a GEMItem, which is added to the parent page. For example:
+
+// Creating the page objects
+GEMPage mainMenu("Main Menu");
+GEMPage settingsPage("Settings");
+GEMPage displayPage("Display");
+
+// Linking pages together
+mainMenu.addMenuItem(GEMItem("Settings", settingsPage));
+settingsPage.addMenuItem(GEMItem("Display", displayPage));
+This creates a structure like:
+
+Main Menu
+ └── Settings
+     └── Display
+
 ---
 
 ## **Credits**
